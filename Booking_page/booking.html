@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20,400,0,0" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.21.6/dist/css/uikit.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.21.6/dist/js/uikit.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.21.6/dist/js/uikit-icons.min.js"></script>
+    <link rel="shortcut icon" href="logo.ico" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <script src="booking.js"></script>
+    <!---->
+    <title>UrbanWheels</title>
+</head>
+<body>
+  <script src="booking.js"></script>
+  <header>
+  <section class="nav1">
+  <nav class="uk-navbar-container" uk-navbar style="padding:1rem 2rem;">
+    <div class="uk-navbar-left">
+        <div class="uk-navbar-item">
+          <div>
+            <a class="uk-navbar-toggle" href uk-search-icon></a>
+            <div class="uk-drop" uk-drop="mode: click; pos: left-center; offset: 0">
+                <form class="uk-search uk-search-navbar uk-width-1-1">
+                    <input class="uk-search-input" type="search" placeholder="Search" aria-label="Search" autofocus>
+                </form>
+            </div>
+        </div>
+        </div>
+    </div>
+    <div class="uk-navbar-center" style="margin: 0 8rem;align-items: center;">
+      <a href=""><img src="UrbanWheels.svg" alt="" style="width: 40%;"></a>
+    </div>
+    <div class="uk-navbar-right">
+      <button id="signin_btn" uk-toggle="target: #my-id" type="button">Login / Sign up</button>
+    </div>
+    <div id="contact_us" uk-modal>
+      <div class="uk-modal-dialog" uk-overflow-auto>
+        <div class="contact-form">
+          <span class="heading">Contact Us</span>
+          <form>
+            <label for="name">Name:</label>
+            <input type="text" required="">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required="">
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" required=""></textarea>
+            <button type="submit">Submit</button>
+          </form>
+        </div>
+        
+      </div>
+  </div>
+    <div id="my-id" uk-modal >
+      <div class="uk-modal-dialog uk-modal-body" style="width: fit-content;">
+        <div class="form-box ">
+          <form class="form uk-modal-body">
+              <span class="title">Sign up</span>
+              <span class="subtitle">Create a free account with your email.</span>
+              <div class="form-container">
+                <input type="text" class="input" placeholder="Full Name">
+                <input type="email" class="input" placeholder="Email">
+                <input type="password" class="input" placeholder="Password">
+              </div>
+              <button class="signup_btn">Sign up</button>
+          </form>
+          <div class="form-section">
+            <p>Have an account? <a href="" uk-toggle="target: #log" class="uk-modal-close" type="button">Log in</a> </p>
+          </div>
+          </div>
+          <button class="uk-button uk-button-default uk-modal-close uk-float-right" type="button">Cancel</button>
+      </div>
+      <div id="log" uk-modal>
+        <div class="uk-modal-dialog uk-modal-body">
+            
+    <form class="form_login uk-modal-body">
+      <p class="form_login-title">Sign in to your account</p>
+       <div class="login-input-container">
+         <input type="email" placeholder="Enter email">
+         <span>
+         </span>
+     </div>
+     <div class="login-input-container">
+         <input type="password" placeholder="Enter password">
+       </div>
+        <button type="submit" class="submit">
+       Sign in
+     </button>
+
+     <p class="signup-link">
+       No account?
+       <a href="" class="uk-modal-close" type="button" uk-toggle="target: #my-id">Sign up</a>
+     </p>
+  </form>
+
+  <button class="uk-button uk-button-default uk-modal-close uk-float-right" type="button">Cancel</button>
+            
+        </div>
+    </div>
+  </div>
+</nav>
+</section>
+<section class="navlinks">
+  <div class="uk-section-secondary uk-background-cover uk-preserve-color" style="background-image: url('car2.jpg');">
+    <div uk-sticky="start: 170; animation: uk-animation-slide-top; sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky; cls-inactive: uk-navbar-transparent uk-light; end: ! *; offset: 80;color:black;">
+
+        <nav class="uk-navbar-container uk-light"id="nav_links">
+          <div class="uk-navbar-center">
+            <div class="uk-container uk-container-expand" >
+                <div uk-navbar class="uk-padding-remove-bottom" >
+
+                    <ul class="uk-navbar-nav uk-subnav-divider " id="links">
+                        <li>
+                          <a href="#booking.html">Home</a>
+                        </li>
+                        <li>
+                          <a href="#browse_cars_section" >Browse Cars</a>
+                        </li>
+                        <li>
+                          <a href="#">Locations</a>
+                        </li>
+                        <li>
+                          <a href="#faq_section">FAQ</a>
+                        </li>
+                        <li>
+                          <a class="uk-button" href="#contact_us" uk-toggle>Contact Us</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+          </div>
+        </nav>
+    </div>
+    <nav aria-label="Breadcrumb">
+      <ul class="uk-breadcrumb">
+          <li><a href="booking.html" >Home</a></li>
+          <li><a href="#">Booking</a></li>
+      </ul>
+  </nav>
+  <section>
+    <div class="uk-section uk-light" id="booking_text">
+        <div class="uk-container">
+          <h1>Find Your <span>Perfect </span>Ride</h1>
+          <h3>Discover a wide range of vehicles to suit your needs. <br>Convenient, reliable, and ready for your next adventure.</h3>
+        </div>
+    </div>
+    <div class="bookform uk-padding">
+    <div class="uk-container uk-box-shadow-medium" id="book_form" >
+      <h4>Book a vehicle</h4>
+      <form>
+        <div class="uk-grid-collapse uk-child-width-expand@s uk-text-center " uk-grid>
+          <div class="uk-grid-column-small" style="margin-right: 10px;">
+            <select class="uk-select">
+              <span  uk-icon="icon: location"></span>
+              <option value="">Pickup location</option>
+                <option value="1">location 1</option>
+                <option value="2">location 2</option>
+                <option value="3">location 3</option>
+            </select>
+            </div>
+            <div class="uk-grid-column-small">
+            <select class="uk-select" >
+              <option value="">Dropoff location</option>
+                <option value="1">location 1</option>
+                <option value="2">location 2</option>
+                <option value="3">location 3</option>
+            </select>
+          </div>
+        </div>
+        <div class="uk-child-width-expand uk-grid-small " uk-grid>
+            
+            <input class="uk-input " type="date" id="pickup-date" name="pickup-date" >
+          
+            <input class="uk-input " type="time" id="pickup-time" name="pickup-time" >
+          
+            <input class="uk-input" type="date" id="dropoff-date" name="Dropoff-date" >
+          
+            <input class="uk-input" type="time" id="dropoff-time" name="Dropoff-time" >
+          
+        </div>
+        <div class="uk-child-width-expand uk-grid-small" uk-grid>
+            <select class="uk-select " >
+              <option value="">Vehicle Category:</option>
+                <option value="1">Luxury</option>
+                <option value="2">Economy</option>
+                <option value="3">Suv & Truck</option>
+            </select>
+
+            <button class="uk-button uk-button-default uk-width-1-2 uk-margin-small-bottom" type="submit" style="background-color: #FF6600;color: white;font-weight: bold;">Find Available Vehicles</button>
+         
+        </div>
+
+      </form>
+      
+    </div>
+  </div>
+</div>
+</section>
+</section>
+</header>
+<section class="uk" id="browse_cars_section">
+  <button class="uk-button uk-button-default uk-margin" type="button" uk-toggle="target: #offcanvas-push" style="margin-left: 2%;"><span uk-icon="menu"></span> Filter</button>
+  <div id="offcanvas-push" uk-offcanvas="mode: push; overlay: true" >
+    <div class="uk-offcanvas-bar" id="vehicleFilterForm">
+
+        <button class="uk-offcanvas-close" type="button" uk-close></button>
+      <h3>Filter</h3>
+      <hr>
+      <ul class="uk-list uk-list-divider">
+        
+        <ul class="uk-list">
+          <h6><b>Vehicle Type</b></h6>
+          
+          <div class="uk-margin uk-grid-small uk-child-width-auto uk-grid" style="margin-left: 4%;">
+            <label><input class="uk-radio" type="radio" name="radio2" > Sedan</label>
+          </div>
+          <div class="uk-margin uk-grid-small uk-child-width-auto uk-grid" style="margin-left: 4%;">
+              <label><input class="uk-radio" type="radio" name="radio2" > Suv</label>
+          </div>
+          <div class="uk-margin uk-grid-small uk-child-width-auto uk-grid" style="margin-left: 4%;">
+            <label><input class="uk-radio" type="radio" name="radio2" > Convertible</label>
+          </div>
+          <div class="uk-margin uk-grid-small uk-child-width-auto uk-grid" style="margin-left: 4%;">
+            <label><input class="uk-radio" type="radio" name="radio2" > Minivan</label>
+          </div>
+          <div class="uk-margin uk-grid-small uk-child-width-auto uk-grid" style="margin-left: 4%;">
+            <label><input class="uk-radio" type="radio" name="radio2" > Truck</label>
+          </div>
+          <div class="uk-margin uk-grid-small uk-child-width-auto uk-grid" style="margin-left: 4%;">
+            <label><input class="uk-radio" type="radio" name="radio2" > Luxury</label>
+          </div>
+      </ul>
+      <ul class="uk-list" >
+        <h6><b>Brand</b></h6>
+        <div class="uk-margin uk-grid-small uk-child-width-auto uk-grid" style="margin-left: 4%;">
+          <label><input class="uk-checkbox" type="checkbox"> Toyota</label>
+        </div>
+        <div class="uk-margin uk-grid-small uk-child-width-auto uk-grid" style="margin-left: 4%;">
+          <label><input class="uk-checkbox" type="checkbox"> Ford</label>
+        </div>
+        <div class="uk-margin uk-grid-small uk-child-width-auto uk-grid" style="margin-left: 4%;">
+          <label><input class="uk-checkbox" type="checkbox"> BMW</label>
+        </div>
+        <div class="uk-margin uk-grid-small uk-child-width-auto uk-grid" style="margin-left: 4%;">
+          <label><input class="uk-checkbox" type="checkbox"> Mercedes</label>
+        </div>
+        <div class="uk-margin uk-grid-small uk-child-width-auto uk-grid" style="margin-left: 4%;">
+          <label><input class="uk-checkbox" type="checkbox"> Honda</label>
+        </div>
+        <div class="uk-margin uk-grid-small uk-child-width-auto uk-grid" style="margin-left: 4%;">
+          <label><input class="uk-checkbox" type="checkbox"> Chevrolet</label>
+        </div>
+      </ul>
+      <ul class="uk-list" >
+        <h6><b>Price range</b></h6>
+        <div class="uk-margin uk-grid-small uk-child-width-auto uk-grid" style="margin-left: 4%;">
+          <label><input class="uk-checkbox" type="checkbox"> $0 - $50 per day</label>
+        </div>
+        <div class="uk-margin uk-grid-small uk-child-width-auto uk-grid" style="margin-left: 4%;">
+          <label><input class="uk-checkbox" type="checkbox"> $51 - $100 per day</label>
+        </div>
+        <div class="uk-margin uk-grid-small uk-child-width-auto uk-grid" style="margin-left: 4%;">
+          <label><input class="uk-checkbox" type="checkbox"> $101 - $150 per day</label>
+        </div>
+        <div class="uk-margin uk-grid-small uk-child-width-auto uk-grid" style="margin-left: 4%;">
+          <label><input class="uk-checkbox" type="checkbox"> $151 - $200 per day</label>
+        </div>
+        <div class="uk-margin uk-grid-small uk-child-width-auto uk-grid" style="margin-left: 4%;">
+          <label><input class="uk-checkbox" type="checkbox"> $200+ per day</label>
+        </div>
+      </ul>
+      <ul class="uk-list" >
+        <h6><b>Features</b></h6>
+        <div class="uk-margin uk-grid-small uk-child-width-auto uk-grid" style="margin-left: 4%;">
+          <label><input class="uk-checkbox" type="checkbox"> Air Conditioning</label>
+        </div>
+        <div class="uk-margin uk-grid-small uk-child-width-auto uk-grid" style="margin-left: 4%;">
+          <label><input class="uk-checkbox" type="checkbox"> Automatic Transmission</label>
+        </div>
+        <div class="uk-margin uk-grid-small uk-child-width-auto uk-grid" style="margin-left: 4%;">
+          <label><input class="uk-checkbox" type="checkbox"> Manual Transmission</label>
+        </div>
+        <div class="uk-margin uk-grid-small uk-child-width-auto uk-grid" style="margin-left: 4%;">
+          <label><input class="uk-checkbox" type="checkbox"> GPS</label>
+        </div>
+        <div class="uk-margin uk-grid-small uk-child-width-auto uk-grid" style="margin-left: 4%;">
+          <label><input class="uk-checkbox" type="checkbox"> Bluetooth</label>
+        </div>
+      </ul>
+    </ul>
+    <button class="uk-button uk-button-text " style="margin-right: 5%;" type="submit" id="applyButton">Apply</button>
+    <button class="uk-button uk-button-text"  type="button" id="resetFilters">Reset</button>
+    
+
+    </div>
+    <div id="results" class="hidden">
+    <!-- This section will display the results -->
+    <h2>Available Vehicles</h2>
+    <ul id="vehicle-list"></ul>
+  </div>
+</div>
+<!--cars dispaly-->
+<div class="uk-flex uk-flex-column" style="padding: 2%;justify-items: center;align-items: center; max-width: 50%;min-height: fit-content;">
+  <div id="vehicleResults" class="vehicle-results uk-flex uk-flex-column">
+    <div class="uk-card uk-card-default uk-child-width-1-2" uk-grid>
+      <div class="uk-card-media-left uk-cover-container">
+          <img src="/Booking_page/2150697544.jpg" alt="" uk-cover>
+          <canvas width="" height=""></canvas>
+      </div>
+      <div>
+        <div class="uk-card-body">
+          <h5>car title</h5>
+          <p>car description: <br>Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde quod iste vero excepturi animi nulla perferendis</p>
+        </div>
+      </div>
+  </div>
+  <div class="uk-card uk-card-default uk-child-width-1-2" uk-grid>
+    <div class="uk-card-media-left uk-cover-container">
+        <img src="/Booking_page/2150697544.jpg" alt="" uk-cover>
+        <canvas width="" height=""></canvas>
+    </div>
+    <div>
+        <div class="uk-card-body">
+          <h5>car title</h5>
+          <p>car description: <br>Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde quod iste vero excepturi animi nulla perferendis</p>
+        </div>
+    </div>
+</div>
+<div class="uk-card uk-card-default uk-child-width-1-2" uk-grid>
+    <div class="uk-card-media-left uk-cover-container">
+        <img src="/Booking_page/2150697544.jpg" alt="" uk-cover>
+        <canvas width="" height=""></canvas>
+    </div>
+    <div>
+      <div class="uk-card-body">
+        <h5>car title</h5>
+        <p>car description: <br>Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde quod iste vero excepturi animi nulla perferendis</p>
+      </div>
+    </div>
+</div>
+  </div>
+
+</div>
+</section>
+<!--section faq-->
+<section  style="padding-bottom: 2.5%;" id="faq_section">
+  <h1 style="padding-bottom: 2.5%;">FAQ Section</h1>
+  <div style="padding-left: 5%;">
+  <h3 class="uk-heading-bullet" style="color: #FF6600;">General Information</h3>
+  <ul uk-accordion style="margin-left: 2%;">
+    <li class="uk-open uk-width-1-2">
+        <a class="uk-accordion-title" href><b>What are your hours of operation?</b></a>
+        <div class="uk-accordion-content ">
+            <p style="margin-left: 6%;">Our rental locations are open from 8 AM to 6 PM, Monday through Saturday. We are closed on Sundays and public holidays.</p>
+        </div>
+        <hr style="background-color: #A4C639;">
+    </li>
+    <li class="uk-width-1-2">
+        <a class="uk-accordion-title" href><b>How can I contact customer service?</b></a>
+        <div class="uk-accordion-content">
+            <p style="margin-left: 6%;">You can reach our customer service team by calling (123) 456-7890 or emailing support@UrbanWheels.com. Our support hours are 9 AM to 5 PM, Monday to Friday.</p>
+        </div>
+        <hr>
+    </li>
+    <li class="uk-width-1-2">
+        <a class="uk-accordion-title" href><b>Where are your rental locations?</b></a>
+        <div class="uk-accordion-content">
+            <p style="margin-left: 6%;">We have rental locations in major cities across the country. Visit our Locations page for a complete list and addresses.</p>
+        </div>
+        <hr>
+    </li>
+</ul>
+</div>
+<div style="padding-left: 5%;">
+<h3 class="uk-heading-bullet" style="color: #FF6600;">Booking and Reservations</h3>
+<ul uk-accordion style="margin-left: 2%;">
+  <li class=" uk-width-1-2">
+      <a class="uk-accordion-title" href><b>How do I make a reservation?</b></a>
+      <div class="uk-accordion-content ">
+          <p style="margin-left: 6%;">You can make a reservation online through our website, by calling our reservation line at (123) 456-7890, or by visiting one of our rental locations.</p>
+      </div>
+      <hr>
+  </li>
+  <li class="uk-width-1-2">
+      <a class="uk-accordion-title" href><b>Can I modify or cancel my reservation?</b></a>
+      <div class="uk-accordion-content">
+          <p style="margin-left: 6%;">Yes, you can modify or cancel your reservation by logging into your account on our website or by contacting our customer service team. Please note that changes and cancellations may be subject to fees and availability.</p>
+      </div>
+      <hr>
+  </li>
+  <li class="uk-width-1-2">
+      <a class="uk-accordion-title" href><b>What information do I need to provide when booking a vehicle?</b></a>
+      <div class="uk-accordion-content">
+          <p style="margin-left: 6%;">You will need to provide your driver's license, a valid credit card, and contact information. Additional information may be required for specific rental agreements.</p>
+      </div>
+      <hr>
+  </li>
+</ul>
+</div>
+<div style="padding-left: 5%;">
+<h3 class="uk-heading-bullet" style="color: #FF6600;">Rental Policies</h3>
+<ul uk-accordion style="margin-left: 2%;">
+  <li class=" uk-width-1-2">
+      <a class="uk-accordion-title" href><b>What are the age requirements for renting a car?</b></a>
+      <div class="uk-accordion-content ">
+          <p style="margin-left: 6%;">The minimum age to rent a vehicle is 21. Renters aged 21-24 may be subject to a young driver surcharge. Certain vehicle categories may have higher age requirements.
+          </p>
+      </div>
+      <hr style="color: #A4C639;">
+  </li>
+  <li class="uk-width-1-2">
+      <a class="uk-accordion-title" href><b>What forms of payment do you accept?</b></a>
+      <div class="uk-accordion-content">
+          <p style="margin-left: 6%;">We accept major credit cards including Visa, MasterCard, American Express, and Discover. Debit cards and cash are not accepted for the initial rental deposit.</p>
+      </div>
+      <hr>
+  </li>
+  <li class="uk-width-1-2">
+      <a class="uk-accordion-title" href><b>Is there a mileage limit on rentals?</b></a>
+      <div class="uk-accordion-content">
+          <p style="margin-left: 6%;">Most of our rentals come with unlimited mileage, but some special offers and vehicle categories may have mileage limits. Please check your rental agreement for specific details.</p>
+      </div>
+      <hr>
+  </li>
+</ul>
+</div>
+</section>
+<footer class="footer_cont">
+  <div class="uk-column-1-2@s">
+    <div class="">
+    <a class="uk-margin-large-left" href="#">
+      <img 
+        src="UrbanWheels.svg"
+        alt="logo"
+        width="100"
+        height="100"
+      />
+    </a>
+    <h4 class="uk-margin-large-top" style="padding-top: 30px;">Life is a journey. Enjoy the ride.</h4></div>
+</div>
+<div class="uk-flex uk-flex-center">
+  <div class="links1 uk-padding">
+    <h6>Connect With Us</h6>
+    <ul>
+      <li><a href="">Instagram</a></li>
+      <li><a href="">Twitter</a></li>
+      <li><a href="">Facebook</a></li>
+      <li><a href="">LinkedIN</a></li>
+      <li><a href="">Email</a></li>
+    </ul>
+  </div>
+  <div class="links2 uk-padding">
+    <h6>Our Location</h6>
+  </div>
+  <div class="links3 uk-padding">
+    <h6>Quick Links</h6>
+    <ul>
+      <li><a href="#about">About Us</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#vehicles">Vehicles</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+  <div class="links4 uk-padding">
+    <h6>Legal</h6>
+    <ul>
+      <li><a href="#Privacy_Policy" uk-toggle>Privacy Policy</a></li>
+      <li><a href="#terms_conditions" uk-toggle>Terms & Conditions</a></li>
+      <li><a href="#cookies_policy" uk-toggle>Coockie Policy</a></li>
+    </ul>
+  </div>
+
+</div>
+
+<p class="copyright">&#169; [2024] UrbanWheels. All rights reserved</p>
+</footer>
+<!-- modal-->
+ <!-- privacy modal-->
+<div id="Privacy_Policy" class="uk-flex-top" uk-modal>
+  <div class="uk-modal-dialog uk-modal-body uk-margin-auto-vertical">
+
+      <button class="uk-modal-close-default" type="button" uk-close></button>
+
+      <h6 ><b>Privacy Policy for Urbanwheels</b></h6>
+      <h6 ><b>Effective Date: [2024]</b></h6>
+      <ol>
+        <li>
+            <h6><b>Introduction</b></h6>
+            <p>Urbanwheels our values your privacy. This Privacy Policy outlines how we collect, use, and protect your information when you use our website and services.</p>
+        </li>
+        <li>
+          <h6><b>Information We Collect</b></h6>
+          <ul>
+            <li><b>Personal Information:</b> Name, email address, phone number, and payment information when you make a reservation.</li>
+            <li><b>Non-Personal Information:</b> Browser type, operating system, and IP address for website optimization.</li>
+          </ul>
+        </li>
+        <li>
+          <h6> <b>How We Use Your Information</b></h6>
+          <ul>
+            <li><b>To Provide Services:</b> Processing reservations and communicating with you about your bookings.</li>
+            <li><b>To Improve Our Services:</b> Analyzing usage data to enhance our website and services.</li>
+            <li><b>Marketing Communications:</b> Sending promotional offers and updates, with your consent.</li>
+          </ul>
+        </li>
+        <li>
+          <h6><b>Sharing Your Information</b></h6>
+          <ul>
+            <li><b>Third-Party Service Providers:</b> For payment processing and email communication.</li>
+            <li><b>Legal Requirements:</b> To comply with legal obligations or protect our rights.</li>
+          </ul>
+        </li>
+        <li>
+          <h6><b>Security</b></h6>
+          <p>We implement appropriate technical and organizational measures to protect your data from unauthorized access, alteration, disclosure, or destruction.</p>
+        </li>
+        <li>
+          <h6><b> Your Rights</b></h6>
+          <p>You have the right to access, correct, or delete your personal information. You can also opt-out of receiving marketing communications.</p>
+        </li>
+        <li>
+          <h6><b>Changes to This Privacy Policy</b></h6>
+          <p>We may update this Privacy Policy periodically. We will notify you of any significant changes by posting the new policy on our website.</p>
+        </li>
+
+      </ol>
+  </div>
+</div>
+<!--terms and conditions modal-->
+<div id="terms_conditions" class="uk-flex-top" uk-modal>
+  <div class="uk-modal-dialog uk-modal-body uk-margin-auto-vertical">
+
+      <button class="uk-modal-close-default" type="button" uk-close></button>
+      <h6><b>Terms & Conditions for UrbanWheels</b></h6>
+      <h6><b>Effective Date: 2024</b></h6>
+      <ol>
+        <li>
+          <h6><b>Introduction</b></h6>
+          <p>These Terms & Conditions govern your use of the UrbanWheels website and services. By using our website, you agree to these terms.</p>
+        </li>
+        <li>
+          <h6><b>Reservations and Payments</b></h6>
+          <ul>
+            <li><b>Booking Process:</b> Reservations can be made through our website.</li>
+            <li><b>Payment:</b> Full payment is required at the time of booking. We accept major credit cards.</li>
+            <li><b>Cancellation Policy:</b> Cancellations must be made 24 hours in advance for a full refund.</li>
+          </ul>
+        </li>
+        <li>
+          <h6><b> Use of Our Services</b></h6>
+          <ul>
+            <li><b>Eligibility:</b> You must be at least 21 years old and possess a valid driver’s license.</li>
+            <li><b>Prohibited Uses:</b> You may not use our vehicles for illegal activities, racing, or subleasing.</li>
+          </ul>
+        </li>
+        <li>
+          <h6><b>Liability</b></h6>
+          <ul>
+            <li><b>User Responsibility:</b> You are responsible for any damage to the vehicle during the rental period.</li>
+            <li><b>Limitations of Liability:</b> UrbanWheels is not liable for any indirect, incidental, or consequential damages arising from the use of our services.</li>
+          </ul>
+        </li>
+        <li>
+          <h6><b> Intellectual Property</b></h6>
+          <p>All content on our website, including text, graphics, logos, and images, is the property of UrbanWheels and protected by intellectual property laws.</p>
+        </li>
+        <li>
+          <h6><b>Changes to Terms & Conditions</b></h6>
+          <p>We may update these Terms & Conditions periodically. Continued use of our website following changes signifies your acceptance of the new terms.</p>
+        </li>
+        <li>
+          <h6><b>Governing Law</b></h6>
+          <p>These terms are governed by the laws of Morocco. Any disputes will be resolved in the courts of Morocco.</p>
+        </li>
+      </ol>
+  </div>
+</div>
+<!--cookies-->
+<div id="cookies_policy" class="uk-flex-top" uk-modal>
+  <div class="uk-modal-dialog uk-modal-body uk-margin-auto-vertical">
+
+    <button class="uk-modal-close-default" type="button" uk-close></button>
+    <h6><b>Cookie Policy for UrbanWheels</b></h6>
+    <h6><b>Effective Date: 2024</b></h6>
+    <ol>
+      <li>
+        <h6><b>Introduction</b></h6>
+        <p>UrbanWheels uses cookies to enhance your experience on our website. This Cookie Policy explains what cookies are and how we use them.</p>
+      </li>
+      <li>
+        <h6><b> What Are Cookies?</b></h6>
+        <p>Cookies are small text files placed on your device by websites you visit. They are widely used to make websites work more efficiently and provide information to website owners.</p>
+      </li>
+      <li>
+        <h6><b>Types of Cookies We Use</b></h6>
+        <ul>
+          <li>
+            <p><b>Essential Cookies:</b>Necessary for the website to function properly. These cannot be disabled.</p>
+            <p><b>Analytical Cookies:</b> Help us understand how visitors interact with our website by collecting and reporting information anonymously.</p>
+            <p><b>Marketing Cookies:</b> Used to track visitors across websites to display relevant advertisements.</p>
+          </li>
+          
+        </ul>
+        <li>
+            <h6><b>Managing Cookies</b></h6>
+            <p>You can manage or delete cookies through your browser settings. Note that disabling cookies may affect the functionality of our website.</p>
+          </li>
+        <li>
+            <h6><b> Changes to This Cookie Policy</b></h6>
+            <p>We may update this Cookie Policy periodically. We will notify you of any significant changes by posting the new policy on our website.</p>
+        </li>
+      </li>
+    </ol>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const pickupDate = document.getElementById('pickup-date');
+    const pickupTime = document.getElementById('pickup-time');
+    const dropoffDate = document.getElementById('dropoff-date');
+    const dropoffTime = document.getElementById('dropoff-time');
+
+    function validateDropoff() {
+      const pickupDateTime = new Date(pickupDate.value + 'T' + pickupTime.value);
+      const dropoffDateTime = new Date(dropoffDate.value + 'T' + dropoffTime.value);
+
+      if (dropoffDateTime <= pickupDateTime) {
+        dropoffDate.setCustomValidity('Dropoff date and time must be after pickup date and time.');
+      } else {
+        dropoffDate.setCustomValidity('');
+      }
+    }
+
+    pickupDate.addEventListener('change', validateDropoff);
+    pickupTime.addEventListener('change', validateDropoff);
+    dropoffDate.addEventListener('change', validateDropoff);
+    dropoffTime.addEventListener('change', validateDropoff);
+  });
+  document.getElementById('vehicleFilterForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    filterVehicles();
+});
+
+document.getElementById('resetFilters').addEventListener('click', function() {
+    resetFilters();
+});
+
+function filterVehicles() {
+    const formData = new FormData(document.getElementById('vehicleFilterForm'));
+
+    fetch('filterVehicles.php', {
+        method: 'POST',
+        body: formData
+    })
+    .then(response => response.json())
+    .then(data => {
+        displayFilteredVehicles(data);
+    })
+    .catch(error => console.error('Error:', error));
+}
+
+function resetFilters() {
+    document.getElementById('vehicleFilterForm').reset();
+    document.getElementById('vehicleResults').innerHTML = '';
+}
+
+function displayFilteredVehicles(vehicles) {
+    const vehicleResults = document.getElementById('vehicleResults');
+    vehicleResults.innerHTML = '';
+
+    if (vehicles.length === 0) {
+        vehicleResults.innerHTML = '<p>No vehicles found matching the criteria.</p>';
+        return;
+    }
+
+    vehicles.forEach(vehicle => {
+        const vehicleCard = document.createElement('div');
+        vehicleCard.classList.add('vehicle-card');
+        vehicleCard.innerHTML = `
+            <img src="${vehicle.image}" alt="${vehicle.name}">
+            <h3>${vehicle.name}</h3>
+            <p>Type: ${vehicle.type}</p>
+            <p>Brand: ${vehicle.brand}</p>
+            <p>Price: $${vehicle.price} per day</p>
+            <p>Features: ${vehicle.features}</p>
+            <p>Passenger Capacity: ${vehicle.passenger_capacity}</p>
+            <p>Availability: ${vehicle.availability}</p>
+            <p>Rental Period: ${vehicle.rental_period}</p>
+            <p>Pickup Location: ${vehicle.pickup_location}</p>
+        `;
+        vehicleResults.appendChild(vehicleCard);
+    });
+}
+
+  
+</script>
+</body>
+</html>
