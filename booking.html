@@ -7,9 +7,9 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.21.6/dist/css/uikit.min.css" />
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.21.6/dist/js/uikit.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.21.6/dist/js/uikit-icons.min.js"></script>
-    <link rel="shortcut icon" href="logo.ico" type="image/x-icon">
-    <link rel="stylesheet" href="BookingPage.css">
-    <script src="bookingPage.js"></script>
+    <link rel="shortcut icon" href="images/logo.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/BookingPage.css">
+    <script src="javascript/bookingPage.js"></script>
     <!---->
     <title>UrbanWheels</title>
 </head>
@@ -30,7 +30,7 @@
         </div>
     </div>
     <div class="uk-navbar-center" style="margin: 0 8rem;align-items: center;">
-      <a href="#"><img src="/Materials/Attachment/UrbanWheels.svg" alt="logo" style="width: 40%;"></a>
+      <a href="#"><img src="images/UrbanWheels.svg" alt="logo" style="width: 40%;"></a>
     </div>
     <div class="uk-navbar-right">
       <button id="signin_btn" uk-toggle="target: #my-id" type="button">Login / Sign up</button>
@@ -102,7 +102,7 @@
 </nav>
 </section>
 <section class="navlinks">
-  <div class="uk-section-secondary uk-background-cover uk-preserve-color" style="background-image: url('/Materials/Cars_pictures/car2.jpg');">
+  <div class="uk-section-secondary uk-background-cover uk-preserve-color" style="background-image: url('images/Cars_pictures/car2.jpg');">
     <div uk-sticky="start: 170; animation: uk-animation-slide-top; sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky; cls-inactive: uk-navbar-transparent uk-light; end: ! *; offset: 80;color:black;">
 
         <nav class="uk-navbar-container uk-light"id="nav_links">
@@ -305,7 +305,7 @@
   <div id="vehicleResults" class="vehicle-results uk-flex uk-flex-column">
     <div class="uk-card uk-card-default uk-child-width-1-2" uk-grid>
       <div class="uk-card-media-left uk-cover-container">
-          <img src="/Materials/Cars_pictures/2150697544.jpg" alt="" uk-cover>
+          <img src="images/Cars_pictures/2150697544.jpg" alt="" uk-cover>
           <canvas width="" height=""></canvas>
       </div>
       <div>
@@ -317,7 +317,7 @@
   </div>
   <div class="uk-card uk-card-default uk-child-width-1-2" uk-grid>
     <div class="uk-card-media-left uk-cover-container">
-        <img src="/Materials/Cars_pictures/2150697544.jpg" alt="" uk-cover>
+        <img src="images/Cars_pictures/2150697544.jpg" alt="" uk-cover>
         <canvas width="" height=""></canvas>
     </div>
     <div>
@@ -329,7 +329,7 @@
 </div>
 <div class="uk-card uk-card-default uk-child-width-1-2" uk-grid>
     <div class="uk-card-media-left uk-cover-container">
-        <img src="/Materials/Cars_pictures/2150697544.jpg" alt="" uk-cover>
+        <img src="images/Cars_pictures/2150697544.jpg" alt="" uk-cover>
         <canvas width="" height=""></canvas>
     </div>
     <div>
@@ -431,7 +431,7 @@
     <div class="">
     <a class="uk-margin-large-left" href="#">
       <img 
-        src="/Materials/Attachment/UrbanWheels.svg"
+        src="images/UrbanWheels.svg"
         alt="logo"
         width="100"
         height="100"
@@ -626,85 +626,4 @@
 
 
 </body>
-<script>
-  document.addEventListener('DOMContentLoaded', function () {
-    const pickupDate = document.getElementById('pickup-date');
-    const pickupTime = document.getElementById('pickup-time');
-    const dropoffDate = document.getElementById('dropoff-date');
-    const dropoffTime = document.getElementById('dropoff-time');
-
-    function validateDropoff() {
-      const pickupDateTime = new Date(pickupDate.value + 'T' + pickupTime.value);
-      const dropoffDateTime = new Date(dropoffDate.value + 'T' + dropoffTime.value);
-
-      if (dropoffDateTime <= pickupDateTime) {
-        dropoffDate.setCustomValidity('Dropoff date and time must be after pickup date and time.');
-      } else {
-        dropoffDate.setCustomValidity('');
-      }
-    }
-
-    pickupDate.addEventListener('change', validateDropoff);
-    pickupTime.addEventListener('change', validateDropoff);
-    dropoffDate.addEventListener('change', validateDropoff);
-    dropoffTime.addEventListener('change', validateDropoff);
-  });
-  document.getElementById('vehicleFilterForm').addEventListener('submit', function(e) {
-    e.preventDefault();
-    filterVehicles();
-});
-
-document.getElementById('resetFilters').addEventListener('click', function() {
-    resetFilters();
-});
-
-function filterVehicles() {
-    const formData = new FormData(document.getElementById('vehicleFilterForm'));
-
-    fetch('filterVehicles.php', {
-        method: 'POST',
-        body: formData
-    })
-    .then(response => response.json())
-    .then(data => {
-        displayFilteredVehicles(data);
-    })
-    .catch(error => console.error('Error:', error));
-}
-
-function resetFilters() {
-    document.getElementById('vehicleFilterForm').reset();
-    document.getElementById('vehicleResults').innerHTML = '';
-}
-
-function displayFilteredVehicles(vehicles) {
-    const vehicleResults = document.getElementById('vehicleResults');
-    vehicleResults.innerHTML = '';
-
-    if (vehicles.length === 0) {
-        vehicleResults.innerHTML = '<p>No vehicles found matching the criteria.</p>';
-        return;
-    }
-
-    vehicles.forEach(vehicle => {
-        const vehicleCard = document.createElement('div');
-        vehicleCard.classList.add('vehicle-card');
-        vehicleCard.innerHTML = `
-            <img src="${vehicle.image}" alt="${vehicle.name}">
-            <h3>${vehicle.name}</h3>
-            <p>Type: ${vehicle.type}</p>
-            <p>Brand: ${vehicle.brand}</p>
-            <p>Price: $${vehicle.price} per day</p>
-            <p>Features: ${vehicle.features}</p>
-            <p>Passenger Capacity: ${vehicle.passenger_capacity}</p>
-            <p>Availability: ${vehicle.availability}</p>
-            <p>Rental Period: ${vehicle.rental_period}</p>
-            <p>Pickup Location: ${vehicle.pickup_location}</p>
-        `;
-        vehicleResults.appendChild(vehicleCard);
-    });
-}
-
-  
-</script>
 </html>

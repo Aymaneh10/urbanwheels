@@ -1,0 +1,354 @@
+:root {
+  font-family: "Montserrat";
+  color: #002f6c;
+}
+.nav1 {
+  align-items: center;
+  justify-content: center;
+}
+.navlinks {
+  padding-bottom: 1rem;
+}
+.nav1 .uk-navbar-right #signin_btn {
+  background-color: #ff6600;
+  width: 150px;
+  height: 30px;
+  border: 0;
+  border-radius: 5px;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+}
+.uk-breadcrumb {
+  margin-left: 1rem;
+}
+.uk-breadcrumb li a {
+  color: white;
+}
+#booking_text h1,
+h3 {
+  font-weight: bold;
+}
+#booking_text span {
+  color: #ff6600;
+}
+.bookform {
+  height: 200px;
+}
+.bookform #book_form {
+  background-color: white;
+  height: fit-content;
+
+  width: 90%;
+  border-radius: 10px;
+}
+.bookform #book_form h4 {
+  margin-top: 1%;
+  color: black;
+  font-weight: bold;
+}
+.form-box {
+  max-width: 300px;
+  background: #f1f7fe;
+  overflow: hidden;
+  border-radius: 16px;
+  color: #010101;
+}
+
+.form {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 32px 24px 24px;
+  gap: 16px;
+  text-align: center;
+}
+
+/*Form text*/
+.title {
+  font-weight: bold;
+  font-size: 1.6rem;
+}
+
+.subtitle {
+  font-size: 1rem;
+  color: #666;
+}
+
+/*Inputs box*/
+.form-container {
+  overflow: hidden;
+  border-radius: 8px;
+  background-color: #fff;
+  margin: 1rem 0 0.5rem;
+  width: 100%;
+}
+
+.input {
+  background: none;
+  border: 0;
+  outline: 0;
+  height: 40px;
+  width: 100%;
+  border-bottom: 1px solid #eee;
+  font-size: 0.9rem;
+  padding: 8px 15px;
+}
+
+.form-section {
+  padding: 16px;
+  font-size: 0.85rem;
+  background-color: #e0ecfb;
+  box-shadow: rgb(0 0 0 / 8%) 0 -1px;
+}
+
+.form-section a {
+  font-weight: bold;
+  color: #0066ff;
+  transition: color 0.3s ease;
+}
+
+.form-section a:hover {
+  color: #005ce6;
+  text-decoration: underline;
+}
+
+/*Button*/
+.form .signup_btn {
+  background-color: #0066ff;
+  color: #fff;
+  border: 0;
+  border-radius: 24px;
+  padding: 10px 16px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.form .signup_btn:hover {
+  background-color: #005ce6;
+}
+/*login form*/
+.form_login {
+  background-color: #fff;
+  display: block;
+  padding: 1rem;
+  max-width: 350px;
+  border-radius: 0.5rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.form_login-title {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  font-weight: 600;
+  text-align: center;
+  color: #000;
+}
+
+.login-input-container {
+  position: relative;
+}
+
+.login-input-container input,
+.form button {
+  outline: none;
+  border: 1px solid #e5e7eb;
+  margin: 8px 0;
+}
+
+.login-input-container input {
+  background-color: #fff;
+  padding: 1rem;
+  padding-right: 3rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  width: 300px;
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
+
+.submit {
+  display: block;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+  background-color: #4f46e5;
+  color: #ffffff;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 500;
+  width: 100%;
+  border-radius: 0.5rem;
+  text-transform: uppercase;
+}
+
+.signup-link {
+  color: #6b7280;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  text-align: center;
+}
+
+.signup-link a {
+  text-decoration: underline;
+}
+.contact-form {
+  background-color: #f2f2f2;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.contact-form label {
+  color: black;
+}
+
+.contact-form .heading {
+  font-size: 24px;
+  color: black;
+  margin-bottom: 12px;
+  font-weight: bold;
+  display: block;
+}
+
+.contact-form form {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-form label {
+  margin-bottom: 10px;
+}
+
+textarea {
+  resize: none;
+  height: 80px;
+  width: 200px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  box-shadow: 0 0 5px #ff6600;
+  transform: scale(1.05);
+  transition: transform 0.3s ease-in-out;
+}
+
+.contact-form button[type="submit"] {
+  background-color: #ff6600;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.contact-form button[type="submit"]:hover {
+  transform: scale(1.1);
+  transition: transform 0.3s ease-in-out;
+}
+.footer_cont{
+  background-color: #F8F9FA;
+}
+.links1,
+.links2,
+.links3,
+.links4 {
+  font-family: "Montserrat";
+  text-align: left;
+}
+.links1 h6,
+.links2 h6,
+.links3 h6,
+.links4 h6 {
+  color: #4a4a4a;
+}
+.links1 h6 {
+  text-align: center;
+}
+.links1 li {
+  list-style: none;
+  color: #4a4a4a;
+}
+.links1 a,
+.links2 a,
+.links3 a,
+.links4 a {
+  color: #007bff;
+  list-style: none;
+  text-decoration: none;
+  text-decoration-line: none;
+}
+.copyright{
+  color: #4a4a4a;
+  text-align: center;
+}
+.footer_cont h4 {
+  color: #002f6c;
+  font-weight: bold;
+  text-align: center;
+  margin-right: 15%;
+}
+#faq_section h1{
+  color: #002f6c;
+  text-align: center;
+  font-weight: bold;
+}
+.vehicle-results {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 20px;
+}
+
+.vehicle-card {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  width: calc(33.333% - 20px);
+  margin-bottom: 20px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.vehicle-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.vehicle-card h3 {
+  margin: 15px;
+  font-size: 20px;
+}
+
+.vehicle-card p {
+  margin: 0 15px 15px;
+  font-size: 14px;
+  color: #555;
+}
+
+@media (max-width: 768px) {
+  .vehicle-card {
+      width: calc(50% - 20px);
+  }
+}
+
+@media (max-width: 480px) {
+  .vehicle-card {
+      width: 100%;
+  }
+}

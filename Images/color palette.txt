@@ -1,0 +1,19 @@
+Primary Color:
+
+	Navy Blue (#002F6C): Conveys professionalism and reliability.
+
+Secondary Colors:
+
+	Bright Blue (#007BFF): Adds a modern and dynamic touch.
+
+	Dark Grey (#4A4A4A):Neutral color for text and secondary elements.
+
+Accent Colors:
+
+	Lime Green (#A4C639): Adds a fresh and energetic feel for buttons and highlights.
+	Orange (#FF6600): For call-to-action buttons to draw attention.
+
+Background Colors:
+
+	White (#FFFFFF): Clean and simple background for most sections.
+	Light Grey (#F8F9FA): Subtle background for sections to differentiate content areas.
